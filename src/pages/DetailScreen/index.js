@@ -27,10 +27,11 @@ const DetailScreen = () => {
           source={{
             uri: sprite,
           }}
+          testID="pokemonImageID"
         />
       </PokemonContainer>
 
-      <PokemonName>{pokemonName}</PokemonName>
+      <PokemonName testID="pokemonNameID">{pokemonName}</PokemonName>
     </Container>
   );
 };

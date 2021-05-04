@@ -15,6 +15,7 @@ const FavoritesScreen = () => {
         data={pokemons}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <ListSeparator />}
+        testID="PokemonListID"
       />
     </Container>
   );

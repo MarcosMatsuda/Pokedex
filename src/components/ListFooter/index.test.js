@@ -1,11 +1,11 @@
 import 'react-native';
 import React from 'react';
-import { ListSeparator } from '~/components';
-import renderer from 'react-test-renderer';
+import { ListFooter } from '~/components';
+import { render } from '@testing-library/react-native';
 
 describe('Snapshot testing', () => {
   test('should take Snapshot', () => {
-    const tree = renderer.create(<ListSeparator />).toJSON();
+    const tree = render(<ListFooter />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, FlatList, Image } from 'react-native';
 import axios from 'axios';
 import { ItemFlatList, ListSeparator, ListFooter } from '../../components';
 import { Container, PokemonList } from './styles';
@@ -61,6 +60,7 @@ const PokedexScreen = ({ navigation }) => {
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.1}
         ListFooterComponent={() => <ListFooter loading />}
+        testID="PokemonListID"
       />
     </Container>
   );

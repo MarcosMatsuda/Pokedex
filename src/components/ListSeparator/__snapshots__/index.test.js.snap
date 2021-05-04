@@ -3,11 +3,12 @@
 exports[`Snapshot testing should take Snapshot 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#CED0CE",
-      "height": 1,
-      "width": "100%",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#ced0ce",
+        "height": 1,
+      },
+    ]
   }
 />
 `;
