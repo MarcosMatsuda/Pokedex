@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, FlatList } from 'react-native';
+import { SafeAreaView, FlatList, Image } from 'react-native';
 import axios from 'axios';
 import { ItemFlatList, ListSeparator, ListFooter } from '../../components';
+import { Container, PokemonList } from './styles';
 
 const URL = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=5';
 
@@ -50,8 +51,8 @@ const PokedexScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <FlatList
+    <Container>
+      <PokemonList
         data={pokedex}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <ListSeparator />}
@@ -61,7 +62,7 @@ const PokedexScreen = ({ navigation }) => {
         onEndReachedThreshold={0.1}
         ListFooterComponent={() => <ListFooter loading />}
       />
-    </SafeAreaView>
+    </Container>
   );
 };
 

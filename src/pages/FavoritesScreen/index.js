@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { SafeAreaView, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 
+import { Container, PokemonList } from './styles';
 import { ItemFlatList, ListSeparator } from '../../components';
 
 const FavoritesScreen = () => {
@@ -11,13 +10,13 @@ const FavoritesScreen = () => {
   const renderItem = ({ item }) => <ItemFlatList pokemon={item} />;
 
   return (
-    <SafeAreaView>
-      <FlatList
+    <Container>
+      <PokemonList
         data={pokemons}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <ListSeparator />}
       />
-    </SafeAreaView>
+    </Container>
   );
 };
 

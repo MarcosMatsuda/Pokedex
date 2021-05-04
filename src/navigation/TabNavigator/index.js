@@ -22,6 +22,9 @@ export const TabNavigator = () => {
       tabBarOptions={{
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
+        labelStyle: {
+          fontSize: 15,
+        },
       }}>
       <Tab.Screen name="Pokedex" component={PokedexScreen} />
       <Tab.Screen name="Favorites" component={FavoritesScreen} />

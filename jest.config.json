@@ -1,0 +1,10 @@
+{
+  "preset": "react-native",
+  "transform": {
+    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/(?!native-base)/"
+  ],
+  "setupFiles": ["./jest.setup.js"]
+}

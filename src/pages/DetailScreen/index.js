@@ -1,28 +1,37 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadPokemon } from '../../store/ducks/details';
-
-import { SafeAreaView, Text } from 'react-native';
 import { useRoute } from '@react-navigation/native';
-
+import {
+  Container,
+  PokemonContainer,
+  PokemonImage,
+  PokemonName,
+} from './styles';
 const DetailScreen = () => {
   const dispatch = useDispatch();
 
   const route = useRoute();
-  const { name: nameRoute } = route.params;
+  const { name } = route.params;
 
-  const { sprite, name, number } = useSelector((state) => state.details);
+  const { sprite, name: pokemonName } = useSelector((state) => state.details);
 
   useEffect(() => {
-    dispatch(loadPokemon(nameRoute));
+    dispatch(loadPokemon(name));
   }, []);
 
   return (
-    <SafeAreaView>
-      <Text>{number}</Text>
-      <Text>{name}</Text>
-      <Text>{sprite}</Text>
-    </SafeAreaView>
+    <Container>
+      <PokemonContainer>
+        <PokemonImage
+          source={{
+            uri: sprite,
+          }}
+        />
+      </PokemonContainer>
+
+      <PokemonName>{pokemonName}</PokemonName>
+    </Container>
   );
 };
 

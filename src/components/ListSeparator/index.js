@@ -1,16 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Separator } from './styles';
 
 const ListSeparator = () => {
-  return (
-    <View
-      style={{
-        height: 1,
-        width: '100%',
-        backgroundColor: '#CED0CE',
-      }}
-    />
-  );
+  return <Separator />;
 };
 
 export { ListSeparator };

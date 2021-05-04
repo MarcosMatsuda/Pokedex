@@ -1,11 +1,17 @@
 import React from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addTofavorites, removeFromFavorites } from '../../store/ducks/pokedex';
-import { useSelector } from 'react-redux';
+
+import {
+  Container,
+  Title,
+  ButtonContainer,
+  Star,
+  DetailContainer,
+} from './styles';
+
 const ItemFlatList = (props) => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
@@ -21,39 +27,26 @@ const ItemFlatList = (props) => {
       ? !!pokemons.find((el) => el.name === name)
       : favorite;
 
-  const favoriteIcon = isFavorite ? (
-    <Icon size={25} name="star" />
-  ) : (
-    <Icon size={25} name="star-outline" />
-  );
-
   return (
-    <View
-      style={{
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        paddingHorizontal: 15,
-        paddingVertical: 10,
-        marginHorizontal: 20,
-      }}>
+    <Container>
       {isFavorite ? (
-        <TouchableOpacity onPress={() => dispatch(removeFromFavorites(name))}>
-          {favoriteIcon}
-        </TouchableOpacity>
+        <ButtonContainer onPress={() => dispatch(removeFromFavorites(name))}>
+          <Star name="star" />
+        </ButtonContainer>
       ) : (
-        <TouchableOpacity onPress={() => dispatch(addTofavorites(name))}>
-          {favoriteIcon}
-        </TouchableOpacity>
+        <ButtonContainer onPress={() => dispatch(addTofavorites(name))}>
+          <Star name="star-outline" />
+        </ButtonContainer>
       )}
-      <TouchableOpacity
+      <DetailContainer
         onPress={() =>
           navigation.navigate('Details', {
             name,
           })
         }>
-        <Text>{name}</Text>
-      </TouchableOpacity>
-    </View>
+        <Title>{name}</Title>
+      </DetailContainer>
+    </Container>
   );
 };
 
