@@ -13,7 +13,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Pokemon Solid';
+  /* font-family: 'PokemonSolid'; */
   font-size: 25;
   color: #26777f;
 `;

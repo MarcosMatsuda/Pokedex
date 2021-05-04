@@ -7,7 +7,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const PokemonName = styled.Text`
-  font-family: 'Pokemon Solid';
+  /* font-family: 'Pokemon Solid'; */
   font-size: 60;
   color: #26777f;
 `;
