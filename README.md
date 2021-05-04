@@ -20,3 +20,10 @@ Pokémon).
 yarn ios
 ```
 
+## Run Tests
+
+`Build the iOS App (requires a MacOS computer)`
+```sh
+yarn test
+```
+
